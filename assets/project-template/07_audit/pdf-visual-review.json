@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "status": "pending",
+  "reviewed_file": "",
+  "reviewed_sha256": "",
+  "reviewed_at": null,
+  "reviewer": "",
+  "checks": {
+    "page_completeness": false,
+    "font_legibility": false,
+    "figure_legibility": false,
+    "table_clipping": false,
+    "equation_rendering": false,
+    "cross_reference_rendering": false
+  },
+  "notes": ""
+}

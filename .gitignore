@@ -1,0 +1,15 @@
+# Python cache and test artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local runtime output and transient execution evidence
+runtime/
+staging/
+*.log
+
+# Local editor and operating-system state
+.vscode/
+.idea/
+Thumbs.db
+Desktop.ini

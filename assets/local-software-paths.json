@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.1",
+  "nx_roots": [
+    "E:\\UG2406\\NX"
+  ],
+  "moldflow_roots": [],
+  "nx_execution": {
+    "bootstrap": "UGII\\ugiicmd.bat",
+    "runner": "NXBIN\\run_journal.exe",
+    "staging_mode": "subst_project_root",
+    "persist_environment": false,
+    "set_ugii_root_dir": false
+  },
+  "note": "User-confirmed ASCII NX 2406 root. Static detection remains separate from runtime, license, and feature validation."
+}

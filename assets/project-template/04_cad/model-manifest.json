@@ -1,0 +1,22 @@
+{
+  "schema_version": "2.0",
+  "artifact_id": "ART-CAD-001",
+  "status": "planned",
+  "tool": "{{CAD}}",
+  "tool_version": "unknown",
+  "license_status": "unknown",
+  "model_revision": "none",
+  "unit_system": "mm-N-s-MPa-degC",
+  "files": [],
+  "measurements": {},
+  "execution": {
+    "backend": "unknown",
+    "journal_or_command": "",
+    "exit_code": null,
+    "completed_at": null,
+    "opened_verified": false
+  },
+  "execution_log": "",
+  "verified_at": null,
+  "notes": "No CAD-derived value may be claimed until actual NX execution and verification."
+}

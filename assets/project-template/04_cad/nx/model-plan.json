@@ -1,0 +1,20 @@
+{
+  "schema_version": "2.0",
+  "backend": "nx",
+  "status": "planned",
+  "coordinate_system": "to_be_defined",
+  "opening_direction": "to_be_defined",
+  "parameter_expression_map": {},
+  "features": [],
+  "required_outputs": [
+    "plastic_part.prt",
+    "plastic_part.step",
+    "mold_assembly.prt",
+    "mold_assembly.step",
+    "drawings.pdf",
+    "bom.csv",
+    "measurements.json",
+    "execution.log"
+  ],
+  "teaching_notice": "{{TEACHING_NOTICE}}"
+}

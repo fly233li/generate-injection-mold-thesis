@@ -1,0 +1,4 @@
+interface:
+  display_name: "注塑模具本科论文设计助手"
+  short_description: "从题目构建可追溯的注塑模具设计与本科论文包"
+  default_prompt: "使用 $generate-injection-mold-thesis 从我的课程设计题目开始，分 Gate 设计并验证注塑模具本科论文项目。"

@@ -1,0 +1,22 @@
+{
+  "schema_version": "2.0",
+  "backend": "{{CAE}}",
+  "status": "planned",
+  "tool_version": "unknown",
+  "license_status": "unknown",
+  "geometry_artifact_id": "ART-CAD-001",
+  "geometry_revision": "none",
+  "material_grade": "unselected",
+  "material_card_id": "unknown",
+  "mesh": {
+    "type": "to_be_selected",
+    "target_size_mm": null,
+    "element_count": null,
+    "quality_metrics": {}
+  },
+  "cases": [],
+  "result_files": [],
+  "execution": {"exit_code": null, "completed_at": null, "success": false},
+  "solver_log": "",
+  "notes": "Without a successful solver log and extracted results this remains prepared_unexecuted."
+}

@@ -1,0 +1,11 @@
+{
+  "name": "neutral-a4-academic",
+  "status": "fallback-only",
+  "page": {"size": "A4", "margin_top_mm": 25.4, "margin_bottom_mm": 25.4, "margin_left_mm": 30.0, "margin_right_mm": 25.4},
+  "body": {"zh_font": "宋体", "en_font": "Times New Roman", "size_pt": 12, "line_spacing": 1.5, "first_line_indent_chars": 2},
+  "heading_1": {"zh_font": "黑体", "size_pt": 16},
+  "heading_2": {"zh_font": "黑体", "size_pt": 14},
+  "heading_3": {"zh_font": "黑体", "size_pt": 12},
+  "caption": {"zh_font": "宋体", "size_pt": 10.5, "fields_required": true},
+  "note": "Use only when no school template is available; verify local requirements before release."
+}

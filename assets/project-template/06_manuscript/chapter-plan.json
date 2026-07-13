@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0",
+  "title": "{{TITLE}}",
+  "status": "planned",
+  "sections": [],
+  "abstract_status": "write_last",
+  "conclusion_status": "write_last",
+  "citation_standard": "verify_at_project_time",
+  "school_template": "missing"
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "2.0",
+  "project_id": "{{PROJECT_ID}}",
+  "title": "{{TITLE}}",
+  "slug": "{{SLUG}}",
+  "mode": "{{MODE}}",
+  "classification": "{{CLASSIFICATION}}",
+  "design_basis_version": 0,
+  "project_revision": 1,
+  "maturity_level": "L0",
+  "release_level": "draft",
+  "created_at": "{{CREATED_AT}}",
+  "updated_at": "{{CREATED_AT}}",
+  "status": "intake",
+  "software": {
+    "cad_requested": "{{CAD}}",
+    "cae_requested": "{{CAE}}",
+    "probe_status": "not_run",
+    "nx_backend": "unknown",
+    "nx_license": "unknown",
+    "moldflow_backend": "unknown",
+    "moldflow_license": "unknown"
+  },
+  "inputs": {
+    "course_task_book": "missing",
+    "school_template": "missing",
+    "part_drawing": "{{PART_INPUT_STATUS}}",
+    "part_model": "{{PART_INPUT_STATUS}}"
+  },
+  "gates": {
+    "G1": {"name": "outline_and_design_basis", "status": "pending", "approved_at": null, "note": ""},
+    "G2": {"name": "mold_scheme", "status": "pending", "approved_at": null, "note": ""},
+    "G3": {"name": "engineering_artifacts", "status": "pending", "approved_at": null, "note": ""},
+    "G4": {"name": "final_release", "status": "pending", "approved_at": null, "note": ""}
+  },
+  "policies": {
+    "assumptions_require_approval": true,
+    "real_sources_only": true,
+    "dynamic_word_cross_references": true,
+    "no_unexecuted_simulation_claims": true,
+    "teaching_use_only": true
+  }
+}

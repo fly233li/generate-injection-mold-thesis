@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0",
+  "nx_root": "E:\\UG2406\\NX",
+  "bootstrap": "UGII\\ugiicmd.bat",
+  "runner": "NXBIN\\run_journal.exe",
+  "staging": {
+    "mode": "subst_project_root",
+    "runtime_dir": "04_cad/nx/runtime/staging",
+    "preferred_drive_letters": [
+      "N",
+      "R",
+      "S",
+      "T",
+      "V",
+      "W",
+      "X",
+      "Y",
+      "Z"
+    ],
+    "timeout_seconds": 300,
+    "physical_scope": "project_only",
+    "persist_environment": false,
+    "set_ugii_root_dir": false
+  },
+  "promotion_policy": {
+    "require_zero_exit": true,
+    "require_expected_files": true,
+    "require_hashes": true,
+    "require_native_reopen": true,
+    "automatic_cad_status_promotion": false
+  }
+}
