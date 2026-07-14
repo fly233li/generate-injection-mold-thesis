@@ -454,6 +454,12 @@ def update_project(project: str | os.PathLike[str], result: dict[str, Any]) -> P
             "nx_version_candidate": nx["version_candidate"], "nx_runtime_status": nx["runtime_status"],
             "nx_preferred_backend": nx["preferred_backend"], "nx_capability_files": nx["capability_files_detected"],
             "moldflow_backend": moldflow["backend"], "moldflow_license": moldflow["license_status"],
+            "moldflow_root": moldflow.get("selected_root", ""),
+            "moldflow_cli_bin": moldflow.get("cli_bin", ""),
+            "moldflow_runstudy": moldflow.get("runstudy_candidate", ""),
+            "moldflow_studymod": moldflow.get("studymod_candidate", ""),
+            "moldflow_studyrlt": moldflow.get("studyrlt_candidate", ""),
+            "moldflow_runtime_status": moldflow.get("runtime_status", "not_run"),
         })
         manifest["updated_at"] = utc_now()
         probe_path = root / "software-probe.json"

@@ -3,7 +3,10 @@
   "nx_roots": [
     "E:\\UG2406\\NX"
   ],
-  "moldflow_roots": [],
+  "moldflow_roots": [
+    "D:\\autodesk",
+    "D:\\autodesk02"
+  ],
   "nx_execution": {
     "bootstrap": "UGII\\ugiicmd.bat",
     "runner": "NXBIN\\run_journal.exe",
@@ -11,5 +14,14 @@
     "persist_environment": false,
     "set_ugii_root_dir": false
   },
-  "note": "User-confirmed ASCII NX 2406 root. Static detection remains separate from runtime, license, and feature validation."
+  "moldflow_execution": {
+    "preferred_root": "D:\\autodesk02\\Moldflow Insight 2024",
+    "synergy_root": "D:\\autodesk02\\Moldflow Synergy 2024",
+    "runner": "bin\\runstudy.exe",
+    "study_modifier": "bin\\studymod.exe",
+    "result_extractor": "bin\\studyrlt.exe",
+    "default_units": "METRIC",
+    "require_explicit_execute": true
+  },
+  "note": "User-confirmed NX 2406 and Moldflow 2024 roots. Static detection remains separate from a successful licensed solve and verified result extraction."
 }

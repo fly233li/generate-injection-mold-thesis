@@ -33,7 +33,8 @@ For a title-only project, include this notice in the design basis and drawings:
 
 ```powershell
 & "<python-executable>" -B -X utf8 "<skill-root>\scripts\init_project.py" --title "<论文题目>" --root "<output-parent>" --mode from-zero --cad nx --cae moldflow
-& "<python-executable>" -B -X utf8 "<skill-root>\scripts\cad_probe.py" --project "<created-project>" --nx-root "E:\UG2406\NX"
+& "<python-executable>" -B -X utf8 "<skill-root>\scripts\cad_probe.py" --project "<created-project>" --nx-root "E:\UG2406\NX" --moldflow-root "D:\autodesk" --moldflow-root "D:\autodesk02"
+& "<python-executable>" -B -X utf8 "<skill-root>\scripts\moldflow_probe.py" --project "<created-project>" --moldflow-root "D:\autodesk02" --verify-cli
 ```
 
 Initialization is deliberately incomplete: the template must fail G1 until a real design-basis packet, requirements, and assumptions exist.
@@ -57,6 +58,14 @@ Use guarded ledger registration. In PowerShell, write one UTF-8 JSON record file
 Use `--replace-if-revision <current>` only for an intentional revision. The tool preserves prior versions in ledger history.
 
 Read [references/project-schema.md](references/project-schema.md) before writing structured records.
+
+## Run Moldflow only with retained evidence
+
+On this machine, use Insight 2024 command automation from `D:\autodesk02\Moldflow Insight 2024\bin` and Synergy 2024 for study setup from `D:\autodesk02\Moldflow Synergy 2024`. `moldflow_probe.py --verify-cli` runs only `-help` and does not claim a license or a simulation result. Read [references/moldflow-execution.md](references/moldflow-execution.md) and [references/moldflow-integrity.md](references/moldflow-integrity.md) before creating a study.
+
+Create and save each configured `.sdy` study under `05_cae\MF01\cases\<CASE-ID>` in Synergy. Before a solve, record the actual material-card ID, geometry revision/hash, mesh type/size/count/quality, case variables, process settings and acceptance criteria. Tell the user before calling `moldflow_run.py --execute`: it may consume a license and creates solver results. Keep any session key in a separate user-controlled file and pass only its path with `--session-key-file`; never write the key to a project or log.
+
+Use `moldflow_run.py` without `--execute` only for `runstudy -dry-run`. After a completed solve, it invokes `studyrlt -exportoutput` in METRIC units and records the command, exits, native study, solver logs, extraction and SHA-256 hashes. Use `--commit` only after the existing `moldflow-study.json` contains actual mesh/material/geometry/case data; the script rejects incomplete or failed evidence. Do not mark the study executed, add `SIM` parameters, or generate thesis figures before this commit succeeds.
 
 ## Follow the gated workflow
 
@@ -94,7 +103,9 @@ Read [references/mold-engineering.md](references/mold-engineering.md).
 
 Create confirmed parameter and calculation baselines. Cover part mass, cavity count, injection capacity, clamp force, cooling, ejection, and project-specific checks. Record formula applicability, substitution, acceptance, margin, and independent check.
 
-Create the original part, mold assembly, part/assembly drawings, and BOM. Use [references/ug-nx-workflow.md](references/ug-nx-workflow.md) and the local portable-NX constraints in [references/local-nx-portable.md](references/local-nx-portable.md). Prepare or execute Moldflow according to [references/moldflow-integrity.md](references/moldflow-integrity.md). Keep model, drawing, BOM, CAE, and parameter revisions aligned.
+Create the original part, mold assembly, part/assembly drawings, and BOM. Use [references/ug-nx-workflow.md](references/ug-nx-workflow.md) and the local portable-NX constraints in [references/local-nx-portable.md](references/local-nx-portable.md). Prepare or execute Moldflow according to [references/moldflow-integrity.md](references/moldflow-integrity.md) and [references/moldflow-execution.md](references/moldflow-execution.md). Keep model, drawing, BOM, CAE, and parameter revisions aligned.
+
+For executed Moldflow cases, register every cited value as `SIM` with the case ID, put the mesh/settings table before the result claim, then place the extracted comparison table and a case-stamped result image immediately after the claim. Analyze units, direction of improvement, trade-off and decision; do not label a scheme optimized unless the committed comparison supports it. Add the study, run log, result extraction and cited plots to the release manifest.
 
 Run:
 
