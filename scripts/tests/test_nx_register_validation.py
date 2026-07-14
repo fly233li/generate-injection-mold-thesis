@@ -52,6 +52,13 @@ class NxRegisterValidationTests(unittest.TestCase):
         }
         atomic_write_json(self.project / "software-probe.json", probe)
 
+    def test_initialized_journals_match_skill_assets_byte_for_byte(self) -> None:
+        skill_root = SCRIPT_DIR.parent
+        for name in ("nxopen-probe-journal.py", "nx-capability-probe-journal.py"):
+            canonical = skill_root / "assets/project-template/04_cad/nx/journals" / name
+            project_copy = self.project / "04_cad/nx/journals" / name
+            self.assertEqual(canonical.read_bytes(), project_copy.read_bytes())
+
     def make_evidence(self, scope: str = "runtime", run_id: str = "NX-TEST") -> tuple[Path, Path]:
         run = self.project / "04_cad/nx/runtime/staging" / run_id
         run.mkdir(parents=True)

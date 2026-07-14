@@ -52,9 +52,11 @@ def replace_tokens(root: Path, tokens: dict[str, str]) -> None:
             data = replace_json_value(data, tokens)
             path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="")
         elif suffix in TEXT_SUFFIXES:
-            text = replace_string(path.read_text(encoding="utf-8-sig"), tokens)
-            encoding = "utf-8-sig" if suffix == ".csv" else "utf-8"
-            path.write_text(text, encoding=encoding, newline="")
+            original = path.read_text(encoding="utf-8-sig")
+            text = replace_string(original, tokens)
+            if text != original:
+                encoding = "utf-8-sig" if suffix == ".csv" else "utf-8"
+                path.write_text(text, encoding=encoding, newline="")
 
 
 def initialize(title: str, root: Path, slug: str | None, mode: str, cad: str, cae: str) -> Path:
